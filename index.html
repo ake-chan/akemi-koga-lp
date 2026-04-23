@@ -826,58 +826,79 @@
     ============================================= */
     .cta-section {
       text-align: center;
-      background: var(--text);
+      background: #1C1710;
       color: var(--bg);
-      padding: 120px 32px;
+      padding: 140px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .cta-section .section-en {
-      color: var(--accent-warm);
+      color: #C9A84C;
     }
 
     .cta-section__title {
       font-family: var(--serif);
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 300;
+      font-size: clamp(26px, 4.5vw, 42px);
+      font-weight: 500;
       letter-spacing: 0.12em;
       line-height: 1.8;
       margin-bottom: 20px;
-      color: var(--bg);
+      color: #F0D98A;
+      text-shadow: 0 2px 20px rgba(201,168,76,0.3);
     }
 
     .cta-section__sub {
       font-family: var(--serif);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 300;
       letter-spacing: 0.1em;
       line-height: 2;
-      color: rgba(245, 241, 235, 0.65);
-      margin-bottom: 52px;
+      color: rgba(240, 217, 138, 0.7);
+      margin-bottom: 64px;
     }
 
     .btn-cta {
       display: inline-block;
-      padding: 22px 72px;
-      background: var(--accent-warm);
-      color: var(--white);
+      padding: 26px 88px;
+      background: linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%);
+      color: #1C1710;
       font-family: var(--serif);
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      border-radius: 999px;
+      border: none;
+      box-shadow:
+        0 0 0 3px #1C1710,
+        0 0 0 5px #C9A84C,
+        0 8px 32px rgba(0,0,0,0.6),
+        0 2px 8px rgba(201,168,76,0.4);
       transition: all 0.4s;
-      border: 1px solid transparent;
     }
 
     .btn-cta:hover {
-      background: transparent;
-      border-color: var(--accent-warm);
-      color: var(--accent-warm);
+      background: linear-gradient(135deg, #E8C96A 0%, #F5DC8A 50%, #E8C96A 100%);
+      box-shadow:
+        0 0 0 3px #1C1710,
+        0 0 0 5px #E8C96A,
+        0 12px 40px rgba(0,0,0,0.7),
+        0 4px 16px rgba(201,168,76,0.6);
+      transform: translateY(-2px);
     }
 
     .cta-section__note {
-      margin-top: 28px;
+      margin-top: 32px;
       font-size: 12px;
-      color: rgba(245, 241, 235, 0.45);
+      color: rgba(240, 217, 138, 0.4);
       letter-spacing: 0.1em;
     }
 
