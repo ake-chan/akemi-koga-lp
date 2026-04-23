@@ -458,7 +458,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      margin: 40px 0;
+      margin: 40px -32px;
       overflow: hidden;
     }
 
@@ -468,11 +468,15 @@
     }
 
     .fight-photos__item:first-child {
-      margin-top: 32px;
+      clip-path: polygon(0 0, 110% 0, 85% 100%, 0 100%);
+      margin-right: -8%;
+      z-index: 1;
+      position: relative;
     }
 
     .fight-photos__item:last-child {
-      margin-bottom: 32px;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+      margin-left: -8%;
     }
 
     .fight-photos__item img {
@@ -1317,8 +1321,20 @@
           </p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <div class="message-banner">
+    <h2 class="message-banner__title">
+      でもこの思い込みに気づき、<br />潜在意識が書き換わると
+    </h2>
+  </div>
+
+  <section class="message-body">
+    <div class="container">
+      <div class="message">
         <p class="message__emphasis section-title">
-          でもこの思い込みに気づき、潜在意識が書き換わると<br />
           "いい子"を卒業し、自分の本音を取り戻せます。
         </p>
 
