@@ -286,16 +286,40 @@
     /* =============================================
        Problem Section
     ============================================= */
+    #problem {
+      background: linear-gradient(rgba(45,30,18,0.72), rgba(45,30,18,0.72)),
+                  url('nayanndeiruhito.jpg') center/cover no-repeat;
+      background-color: #4D3B2D;
+      border-radius: 50% 50% 0 0 / 80px 80px 0 0;
+      margin-top: -2px;
+      padding-top: 100px;
+    }
+
+    #problem .section-en,
+    #problem .problem__heading-large {
+      color: #EDE8DC;
+    }
+
     .problem {
       text-align: center;
     }
 
-    .problem__heading {
+    .problem__heading-large {
       font-family: var(--serif);
-      font-size: clamp(18px, 3vw, 26px);
+      font-size: clamp(36px, 8vw, 64px);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .problem__heading-small {
+      font-family: var(--serif);
+      font-size: clamp(16px, 3.5vw, 24px);
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       line-height: 1.8;
+      color: var(--text-mid);
       margin-bottom: 56px;
     }
 
@@ -304,30 +328,36 @@
       max-width: 560px;
       margin: 0 auto 64px;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .problem__list li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 20px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 22px 24px;
+      background: #2D2923;
+      border-radius: 10px;
       font-family: var(--serif);
       font-size: 15px;
       font-weight: 300;
       letter-spacing: 0.05em;
-      line-height: 1.8;
+      line-height: 1.7;
+      color: #EDE8DC;
     }
 
     .problem__list li::before {
       content: '';
       display: block;
       flex-shrink: 0;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent-warm);
-      margin-top: 13px;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 2px solid #C9A84C;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpolyline points='4,12 9,17 18,6' stroke='%23C9A84C' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/cover no-repeat;
+      margin-top: 0;
     }
 
     /* =============================================
@@ -1002,11 +1032,81 @@
     }
 
     @media (max-width: 480px) {
-      .fv__cta { padding: 16px 36px; }
-      .btn-cta { padding: 20px 48px; }
+      /* --- Base --- */
+      .section { padding: 64px 0; }
+      .container,
+      .container--wide { padding: 0 20px; }
+
+      /* --- Header --- */
+      .site-header { padding: 14px 20px; }
+      .header-name { font-size: 12px; }
+      .header-ig   { font-size: 11px; }
+
+      /* --- FV --- */
+      .fv__label  { font-size: 10px; letter-spacing: 0.25em; margin-bottom: 20px; }
+      .fv__main   { font-size: clamp(22px, 7.5vw, 30px); margin-bottom: 20px; }
+      .fv__sub    { font-size: 13px; margin-bottom: 36px; }
+      .fv__cta    { font-size: 16px; padding: 22px 0; }
+      .fv__scroll { display: none; }
+
+      /* --- Problem --- */
+      #problem { border-radius: 40px 40px 0 0; padding-top: 72px; }
+      .problem__heading-large { font-size: clamp(28px, 9vw, 38px); }
+      .problem__heading-small { font-size: 15px; }
+      .problem__list { gap: 10px; margin-bottom: 40px; }
+      .problem__list li { font-size: 14px; padding: 18px 16px; gap: 14px; }
+
+      /* --- Message --- */
+      .message__text   { font-size: 15px; }
+      .message__block  { padding: 28px 20px; }
+      .message__block p { font-size: 14px; }
+      .message__emphasis { font-size: 16px; }
+
+      /* --- Reasons --- */
+      .reasons__header h2 { font-size: 18px; }
+      .reason-card { padding: 32px 20px; }
+      .reason-card__title { font-size: 15px; }
+      .reason-card__text  { font-size: 13px; }
+
+      /* --- Flow --- */
+      .flow__header h2    { font-size: 18px; }
+      .flow__steps        { gap: 56px; }
+      .flow-step__num     { font-size: 48px; }
+      .flow-step__title   { font-size: 17px; }
+      .flow-step__text    { font-size: 13px; }
+
+      /* --- Voices --- */
+      .voices__header h2  { font-size: 18px; }
+      .voice-card__photo  { height: 220px; }
+      .voice-card__body   { padding: 24px 20px; gap: 24px; }
+      .voice-card__person { font-size: 12px; margin-bottom: 16px; }
+      .voice-card__text   { font-size: 13px; }
+
+      /* --- Overview --- */
+      .overview__header h2 { font-size: 18px; }
+      .overview__box       { padding: 32px 20px; }
       .overview__table th,
-      .overview__table td { font-size: 13px; }
+      .overview__table td  { font-size: 13px; padding: 18px 0; }
       .overview__table td strong { font-size: 22px; }
+      .overview__table th  { width: 90px; }
+
+      /* --- Profile --- */
+      .profile__name  { font-size: 22px; }
+      .profile__text  { font-size: 13px; }
+
+      /* --- FAQ --- */
+      .faq__header h2   { font-size: 18px; }
+      .faq-item__q      { font-size: 14px; padding: 22px 0; }
+      .faq-item__a      { font-size: 13px; padding-left: 28px; }
+
+      /* --- CTA --- */
+      .cta-section       { padding: 80px 20px; }
+      .cta-section__title { font-size: clamp(20px, 6vw, 28px); }
+      .cta-section__sub   { font-size: 14px; margin-bottom: 40px; }
+      .btn-cta { font-size: 16px; padding: 24px 0; width: 92vw; }
+
+      /* --- Footer --- */
+      .site-footer { padding: 40px 20px; }
     }
   </style>
 </head>
@@ -1066,17 +1166,16 @@
   <!-- =========================================
        Problem Section
   ========================================= -->
-  <section class="section" id="problem">
+  <section class="section section--dark" id="problem">
     <div class="container">
       <div class="problem">
         <p class="section-en">Does this sound familiar?</p>
         <div class="divider"></div>
-        <h2 class="problem__heading section-title">
+        <h2 class="problem__heading-large">
           頑張っているのに、<br />
-          満たされない<br />
-          <br />
-          そんなモヤモヤ<br />感じていませんか？
+          満たされない
         </h2>
+        <p class="problem__heading-small">そんなモヤモヤ感じていませんか？</p>
 
         <ul class="problem__list">
           <li>毎日こなしているのに、達成感がない</li>
