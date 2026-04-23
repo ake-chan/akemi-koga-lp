@@ -454,6 +454,22 @@
       font-weight: 400;
     }
 
+    .circle-mark {
+      position: relative;
+      display: inline-block;
+      padding: 0 6px;
+    }
+
+    .circle-mark::before {
+      content: '';
+      position: absolute;
+      inset: -4px -8px;
+      border: 2.5px solid #FB443F;
+      border-radius: 52% 48% 55% 45% / 45% 55% 48% 52%;
+      transform: rotate(-2deg);
+      pointer-events: none;
+    }
+
     .fight-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1283,7 +1299,7 @@
         <p class="message__accent">
           それは<br />
           あなたが長い間<br />
-          "いい子"を演じ続けてきたから
+          "<span class="circle-mark">いい子</span>"を演じ続けてきたから
         </p>
 
         <div class="message__block">
@@ -1335,7 +1351,7 @@
     <div class="container">
       <div class="message">
         <p class="message__emphasis section-title">
-          "いい子"を卒業し、自分の本音を取り戻せます。
+          "<span class="circle-mark">いい子</span>"を卒業し、自分の本音を取り戻せます。
         </p>
 
         <p class="lead mt-md" style="color: var(--text-mid);">
