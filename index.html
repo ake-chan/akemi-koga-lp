@@ -538,35 +538,67 @@
 
     .reasons__grid {
       display: grid;
-      gap: 2px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
     .reason-card {
       background: var(--white);
-      padding: 52px 48px;
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 0 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reason-card--full {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .reason-card__photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .reason-card--full .reason-card__photo {
+      width: 320px;
+      aspect-ratio: auto;
+      height: 220px;
+    }
+
+    .reason-card__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reason-card__inner {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .reason-card__num {
       font-family: var(--en);
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 300;
       color: var(--accent-warm);
       line-height: 1;
-      padding-top: 6px;
     }
 
     .reason-card__body {}
 
     .reason-card__title {
       font-family: var(--serif);
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.06em;
       line-height: 1.7;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .reason-card__text {
@@ -574,6 +606,12 @@
       color: var(--text-mid);
       letter-spacing: 0.04em;
       line-height: 2;
+    }
+
+    @media (max-width: 600px) {
+      .reasons__grid { grid-template-columns: 1fr; }
+      .reason-card--full { flex-direction: column; }
+      .reason-card--full .reason-card__photo { width: 100%; height: auto; aspect-ratio: 4/3; }
     }
 
     /* =============================================
@@ -1376,8 +1414,11 @@
 
       <div class="reasons__grid">
         <article class="reason-card">
-          <div class="reason-card__num">01</div>
-          <div class="reason-card__body">
+          <div class="reason-card__photo">
+            <img src="hoshi.jpg" alt="占星術" loading="lazy" />
+          </div>
+          <div class="reason-card__inner">
+            <div class="reason-card__num">01</div>
             <h3 class="reason-card__title">あなたの「生まれつきの傷と課題」を読み解く</h3>
             <p class="reason-card__text">
               占星術は、生まれた瞬間の天体配置から読み解く"あなただけの取扱説明書"。一般的な性格診断とは深さが違います。インナーチャイルドの傷や、乗り越えるべき課題がわかります。
@@ -1385,9 +1426,12 @@
           </div>
         </article>
 
-        <article class="reason-card" style="background: var(--bg-alt);">
-          <div class="reason-card__num">02</div>
-          <div class="reason-card__body">
+        <article class="reason-card">
+          <div class="reason-card__photo">
+            <img src="omoikomi.jpg" alt="思い込み" loading="lazy" />
+          </div>
+          <div class="reason-card__inner">
+            <div class="reason-card__num">02</div>
             <h3 class="reason-card__title">「何度も同じ壁にぶつかってしまう」理由がわかる</h3>
             <p class="reason-card__text">
               意志が弱いや努力が足りないんじゃない。潜在意識に刻まれた思い込みのパターンが原因。頭でわかるじゃなく、「そうなってたんですね」と腑に落ちる体験をします。
@@ -1395,9 +1439,9 @@
           </div>
         </article>
 
-        <article class="reason-card">
-          <div class="reason-card__num">03</div>
-          <div class="reason-card__body">
+        <article class="reason-card reason-card--full">
+          <div class="reason-card__inner">
+            <div class="reason-card__num">03</div>
             <h3 class="reason-card__title">「優等生」を生きてきた私だから、わかることがある</h3>
             <p class="reason-card__text">
               本当の自分を後回しにし続けた私だから、あなたの「しんどさ」の深さがわかります。
