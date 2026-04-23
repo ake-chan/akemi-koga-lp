@@ -362,7 +362,7 @@
     ============================================= */
     /* --- Message Banner Header --- */
     .message-banner {
-      background: #4D3B2D;
+      background: #5BB9EB;
       padding: 52px 32px 80px;
       text-align: center;
       position: relative;
@@ -452,6 +452,34 @@
       font-size: 16px;
       color: var(--text);
       font-weight: 400;
+    }
+
+    .fight-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+
+    .fight-photos__item {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .fight-photos__item:first-child {
+      margin-top: 32px;
+    }
+
+    .fight-photos__item:last-child {
+      margin-bottom: 32px;
+    }
+
+    .fight-photos__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
     .message__emphasis {
@@ -1262,6 +1290,15 @@
             「私はどうせ変われない」<br />
             と諦めていませんか？
           </p>
+        </div>
+
+        <div class="fight-photos">
+          <div class="fight-photos__item">
+            <img src="fight1.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="fight-photos__item">
+            <img src="fight2.jpg" alt="" loading="lazy" />
+          </div>
         </div>
 
         <div class="message__block">
