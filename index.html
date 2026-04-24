@@ -853,6 +853,33 @@
     .voice-arrow__line { display: none; }
     .voice-arrow__head { display: none; }
 
+    .voice-card__headline {
+      padding: 28px 48px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .voice-card__summary {
+      font-family: var(--serif);
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .voice-card__name-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #F0D080 0%, #C9A84C 50%, #A07828 100%);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 6px 20px;
+      border-radius: 999px;
+    }
+
     .voice-card__person {
       font-family: var(--serif);
       font-size: 13px;
@@ -1286,6 +1313,8 @@
       }
 
       .voice-arrow { display: flex; }
+      .voice-card__headline { padding: 20px 24px 16px; }
+      .voice-card__summary { font-size: 18px; }
 
       .overview__box { padding: 40px 28px; }
 
@@ -1506,7 +1535,7 @@
   <div class="message-banner" style="background:#644A36;">
     <h2 class="message-banner__title">
       私たちの行動を本当に動かしているのは、<br />
-      潜在意識の深いところにある<br />「自分への思い込み」です。
+      潜在意識の深いところにある<br /><span class="circle-mark">「自分への思い込み」</span>です。
     </h2>
   </div>
 
@@ -1712,6 +1741,10 @@
 
       <!-- Voice 1 -->
       <div class="voice-card">
+        <div class="voice-card__headline">
+          <p class="voice-card__summary">人の評価が<br />どうでもよくなった</p>
+          <span class="voice-card__name-badge">40代　Mさん（パート勤務）</span>
+        </div>
         <div class="voice-card__photo">
           <img src="voice1.jpg" alt="Mさんのお声" loading="lazy" />
         </div>
@@ -1741,6 +1774,10 @@
 
       <!-- Voice 2 -->
       <div class="voice-card" style="background: var(--bg-alt);">
+        <div class="voice-card__headline">
+          <p class="voice-card__summary">セラピストとして<br />独立する決断ができた</p>
+          <span class="voice-card__name-badge">40代　Yさん（セラピスト）</span>
+        </div>
         <div class="voice-card__photo">
           <img src="voice4.jpg" alt="Yさんのお声" loading="lazy" />
         </div>
@@ -1770,6 +1807,10 @@
 
       <!-- Voice 3 -->
       <div class="voice-card">
+        <div class="voice-card__headline">
+          <p class="voice-card__summary">会社に行くのが<br />楽しみと感じるように</p>
+          <span class="voice-card__name-badge">50代　Sさん（会社員）</span>
+        </div>
         <div class="voice-card__photo">
           <img src="voice3.jpg" alt="Sさんのお声" loading="lazy" />
         </div>
