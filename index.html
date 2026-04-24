@@ -475,16 +475,18 @@
 
     .circle-mark {
       position: relative;
-      display: inline-block;
-      padding: 2px 10px;
+      display: inline;
+      padding: 2px 4px;
       background: linear-gradient(transparent 55%, rgba(255, 220, 50, 0.55) 55%);
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
 
     .fight-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      margin: 40px -32px;
+      margin: 20px -32px;
       overflow: hidden;
     }
 
@@ -589,6 +591,12 @@
       width: 320px;
       aspect-ratio: auto;
       height: 220px;
+      overflow: hidden;
+    }
+
+    .reason-card--full .reason-card__photo img {
+      object-fit: contain;
+      object-position: center;
     }
 
     .reason-card__photo img {
@@ -1366,7 +1374,7 @@
     <div class="container">
       <div class="problem">
         <p class="section-en">こんなお悩みありませんか？</p>
-        <div class="divider" style="background:#2F92EC;"></div>
+        <div class="divider"></div>
         <h2 class="problem__heading-large">
           頑張っているのに、<br />
           満たされない
@@ -1418,12 +1426,9 @@
           </p>
         </div>
 
-        <div class="fight-photos">
-          <div class="fight-photos__item">
-            <img src="fight1.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="fight-photos__item">
-            <img src="fight2.jpg" alt="" loading="lazy" />
+        <div class="fight-photos" style="grid-template-columns: 1fr; margin: -20px -32px -40px;">
+          <div class="fight-photos__item" style="aspect-ratio: auto; height: auto; clip-path: none;">
+            <img src="fight1.jpg" alt="" loading="lazy" style="width: 100%; height: auto; object-fit: contain;" />
           </div>
         </div>
 
@@ -1529,7 +1534,7 @@
 
         <article class="reason-card reason-card--full">
           <div class="reason-card__photo">
-            <img src="akemi.jpeg" alt="古賀明美" loading="lazy" />
+            <img src="name.jpg" alt="古賀明美" loading="lazy" />
           </div>
           <div class="reason-card__inner">
             <div class="reason-card__num">03</div>
@@ -1681,7 +1686,7 @@
             <p class="voice-card__person" style="visibility: hidden;">_</p>
             <span class="voice-label voice-label--after">After</span>
             <p class="voice-card__text">
-              無意識に陥っていた思考パターンに気づくことで、自分でもびっくりするほど自己受容ができるようになった。それにより、<span class="circle-mark">現在の職場を退職して自分自身の活動をスタートする決断</span>ができた。
+              無意識に陥っていた思考パターンに気づくことで、自分でもびっくりするほど自己受容ができるようになった。それにより、現在の<span class="circle-mark">職場を退職して自分自身の活動をスタートする決断</span>ができた。
             </p>
           </div>
         </div>
@@ -1704,7 +1709,7 @@
             <p class="voice-card__person" style="visibility: hidden;">_</p>
             <span class="voice-label voice-label--after">After</span>
             <p class="voice-card__text">
-              毎回自分では気付けない思いがけない視点に出会え、深いところまで到達できました。自分の捉え方が変わることで、職場の人間関係も気にならなくなり、<span class="circle-mark">日曜夜には会社に行くのが楽しみと感じるように</span>なった。また<span class="circle-mark">定年後にやりたいことも明確になり</span>日々楽しんでいる。
+              毎回自分では気付けない思いがけない視点に出会え、深いところまで到達できました。自分の捉え方が変わることで、職場の人間関係も気にならなくなり、<span class="circle-mark">日曜の夜には会社に行くのが楽しみと感じるように。</span>また<span class="circle-mark">定年後にやりたいことも明確になった。</span>日々楽しんでいる。
             </p>
           </div>
         </div>
