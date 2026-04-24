@@ -817,7 +817,34 @@
       background: var(--white);
       border: 1px solid var(--border);
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
+    .voice-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .voice-card:nth-of-type(1) { transition-delay: 0.0s; }
+    .voice-card:nth-of-type(2) { transition-delay: 0.25s; }
+    .voice-card:nth-of-type(3) { transition-delay: 0.5s; }
+
+    .voice-card__body > div {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .voice-card__body > div.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .voice-card__body > div:nth-child(1) { transition-delay: 0.2s; }
+    .voice-card__body > .voice-arrow     { transition-delay: 0.45s; }
+    .voice-card__body > div:nth-child(3) { transition-delay: 0.6s; }
 
     .voice-card + .voice-card {
       margin-top: 2px;
@@ -2066,6 +2093,19 @@
       });
     }, { threshold: 0.2 });
     flowSteps.forEach(step => flowObserver.observe(step));
+
+    const voiceCards = document.querySelectorAll('.voice-card');
+    const voiceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.querySelectorAll('.voice-card__body > div, .voice-card__body > .voice-arrow').forEach(el => {
+            el.classList.add('visible');
+          });
+        }
+      });
+    }, { threshold: 0.15 });
+    voiceCards.forEach(card => voiceObserver.observe(card));
   </script>
 </body>
 </html>
