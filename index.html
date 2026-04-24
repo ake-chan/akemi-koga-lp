@@ -866,15 +866,28 @@
       line-height: 1.6;
       color: var(--text);
       margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .voice-card__summary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 220, 50, 0.6), transparent);
+      animation: shimmer 2.8s ease-in-out infinite;
     }
 
     .voice-card__name-badge {
       display: inline-block;
-      background: linear-gradient(135deg, #F0D080 0%, #C9A84C 50%, #A07828 100%);
+      background: var(--accent-warm);
       color: #fff;
       font-family: var(--serif);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 500;
       letter-spacing: 0.1em;
       padding: 6px 20px;
       border-radius: 999px;
@@ -1750,7 +1763,6 @@
         </div>
         <div class="voice-card__body">
           <div>
-            <p class="voice-card__person">40代　Mさん（パート勤務）</p>
             <span class="voice-label voice-label--before">Before</span>
             <p class="voice-card__text">
               常に人からの評価を気にして、自分のことがよくわからなくなっていた。何か起こると、自分が悪いことをしたのではないかとすぐにマイナス思考になって疲れていた。
@@ -1783,7 +1795,6 @@
         </div>
         <div class="voice-card__body">
           <div>
-            <p class="voice-card__person">40代　Yさん（セラピスト）</p>
             <span class="voice-label voice-label--before">Before</span>
             <p class="voice-card__text">
               これから自分のサロンを持ちたいと思っているが、自信がなくどうしても完璧主義になり進まない状態だった。
@@ -1816,7 +1827,6 @@
         </div>
         <div class="voice-card__body">
           <div>
-            <p class="voice-card__person">50代　Sさん（会社員）</p>
             <span class="voice-label voice-label--before">Before</span>
             <p class="voice-card__text">
               これまでもカウンセリングや講座など受けてきたが変化はなく、生活も周りから見れば悪くないけど、充実感がなかった。また職場の人間関係が悪く毎日がつまらない日々だったが、自分でもどうしたらいいのかわからなくなっていた。
