@@ -1015,6 +1015,31 @@
       margin-left: 8px;
     }
 
+    .price-original {
+      font-size: 16px;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+
+    .price-special-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #F0D080 0%, #C9A84C 50%, #A07828 100%);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 12px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    .price-period {
+      font-size: 12px;
+      color: #C9A84C;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
     .overview__note {
       margin-top: 36px;
       padding-top: 36px;
@@ -1896,7 +1921,12 @@
         <table class="overview__table">
           <tr>
             <th>料金</th>
-            <td><strong>¥8,800</strong><span class="price-note">（税込）</span></td>
+            <td>
+              <p class="price-original">通常 ¥11,000（税込）</p>
+              <span class="price-special-badge">🎌 ゴールデンウィーク特別価格</span><br />
+              <strong style="color:#E03030;">¥8,800</strong><span class="price-note">（税込）</span>
+              <p class="price-period">※ 5月10日（土）までのお申し込み限定</p>
+            </td>
           </tr>
           <tr>
             <th>時間・形式</th>
@@ -2031,7 +2061,7 @@
     </h2>
 
     <p class="cta-section__sub">
-      限定5名 ／ 60分　¥8,800（税込）
+      限定5名 ／ 60分　¥11,000　→　<span style="color:#E03030; font-weight:700;">¥8,800</span>（税込）<br /><span style="font-size:0.8em; opacity:0.85;">🎌 ゴールデンウィーク特別価格・5月10日まで</span>
     </p>
 
     <a
